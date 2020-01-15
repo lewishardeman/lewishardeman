@@ -7,8 +7,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import AlarmIcon from '@material-ui/icons/Alarm';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Background from './sunset.jpg';
+import LewisAvatar from './lewis_avatar.jpg';
 import Header from './Header/Header';
-import { Typography } from '@material-ui/core';
 
 
 const useStyles = makeStyles(theme => ({
@@ -50,7 +50,7 @@ function Landing() {
     return (
         <div >
             
-            <body className={classes.background} >
+            <div className={classes.background} >
             <Header />
             <Grid
                 container
@@ -64,7 +64,7 @@ function Landing() {
                         LEWIS HARDEMAN
                     </Grid>
                     <Grid item className={classes.gridItem}>
-                        <Avatar alt="Remy Sharp" src="/lewis_avatar.jpg" style={{height:200, width:200}} />
+                        <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} />
                     </Grid>
                     <Grid item className={classes.gridItem}>
                         <div className={classes.borderTop}>
@@ -86,7 +86,7 @@ function Landing() {
                         </IconButton>
                     </Grid>
                 </Grid>
-            </body>
+            </div>
         </div>
     );
 }
