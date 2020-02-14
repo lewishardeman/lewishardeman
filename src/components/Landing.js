@@ -3,12 +3,18 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AlarmIcon from '@material-ui/icons/Alarm';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+//import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+//import CodeOutlinedIcon from '@material-ui/icons/CodeOutlined';
+import InstagramIcon from '@material-ui/icons/Instagram';
+//import MyLocationIcon from '@material-ui/icons/MyLocation';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import Background from './sunset.jpg';
 import LewisAvatar from './lewis_avatar.jpg';
 import Header from './Header/Header';
+import classNames from 'classnames';
+import AddIcon from '@material-ui/icons/Add';
 
 
 const useStyles = makeStyles(theme => ({
@@ -33,14 +39,35 @@ const useStyles = makeStyles(theme => ({
         color: '#fff',
         fontSize: '2rem',
     },
-    borderTop:{
-        borderTopWidth: '1px',
-        borderTopColor: '#fff',
-        borderTopStyle: 'solid',
+    socialIconList: {
+        paddingTop: '1.0rem',
+    },
+    borderBottom:{
+        borderBottomWidth: '1px',
+        borderBottomColor: '#fff',
+        borderBottomStyle: 'solid',
+    },
+    skills:{
+        color: '#fff',
+        // fontStyle: 'italic',
+        paddingTop: '1.0rem',
+        paddingRight: '1.0rem',
+        paddingLeft: '1.0rem',
+        fontSize: '1.5vw',
+        fontWeight: 500,
+        textTransform: 'uppercase'
+    },
+    statement:{
         color: '#fff',
         fontStyle: 'italic',
-        padding: '10px',
-        fontSize: '1.5rem',
+        paddingTop: '1.5rem',
+        paddingRight: '1.0rem',
+        paddingLeft: '1.0rem',
+        fontSize: '1.5vw',
+    },
+    addIcon: {
+        //backgroundColor:'#000',
+        verticalAlign:'middle'
     }
   }));
 
@@ -57,8 +84,7 @@ function Landing() {
                 direction="column"
                 justify="center"
                 alignItems="center"
-                style={{height: '90vh'}}
-                
+                style={{height: '90vh'}} 
             >
                     <Grid item className={classes.pagetitle}>
                         LEWIS HARDEMAN
@@ -67,22 +93,25 @@ function Landing() {
                         <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} />
                     </Grid>
                     <Grid item className={classes.gridItem}>
-                        <div className={classes.borderTop}>
-                            Full Stack JavaScript developer and lover of the outdoors.
+                        <div className={classNames(classes.borderTop, classes.skills)}>
+                            Project Manager  <AddIcon className={classes.addIcon}/>  JavaScript Developer  <AddIcon className={classes.addIcon}/>  Sales Director  <AddIcon className={classes.addIcon}/>  Combat Veteran
+                        </div>
+                        <div className={classNames(classes.statement)}>
+                            I transform software ideas into business solutions.
                         </div>
                     </Grid>
-                    <Grid item >
+                    <Grid item className={classes.socialIconList} >
                         <IconButton aria-label="delete" >
-                            <DeleteIcon className={classes.iconButtonSocial} />
+                            <FacebookIcon className={classes.iconButtonSocial} />
                         </IconButton>
                         <IconButton aria-label="delete"  >
-                            <DeleteIcon className={classes.iconButtonSocial} />
+                            <LinkedInIcon className={classes.iconButtonSocial} />
                         </IconButton>
                         <IconButton  aria-label="add an alarm" >
-                            <AlarmIcon className={classes.iconButtonSocial} />
+                            <GitHubIcon className={classes.iconButtonSocial} />
                         </IconButton>
                         <IconButton  aria-label="add to shopping cart" >
-                            <AddShoppingCartIcon className={classes.iconButtonSocial} />
+                            <InstagramIcon className={classes.iconButtonSocial} />
                         </IconButton>
                     </Grid>
                 </Grid>

@@ -12,8 +12,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import BusinessIcon from '@material-ui/icons/Business';
+import DescriptionIcon from '@material-ui/icons/Description';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 import './Header.css'; 
 
@@ -67,25 +71,25 @@ export default function Header() {
 
           <ListItem button >
             <ListItemIcon>
-              <MailIcon />
+              <HomeIcon />
             </ListItemIcon>
             <ListItemText>HOME</ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
-              <MailIcon />
+              <DashboardIcon />
             </ListItemIcon>
             <ListItemText>PROJECTS</ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
-              <MailIcon />
+              <DescriptionIcon />
             </ListItemIcon>
             <ListItemText>RESUME</ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
-              <MailIcon />
+              <BusinessIcon />
             </ListItemIcon>
             <ListItemText>WORK HISTORY</ListItemText>
           </ListItem>
@@ -96,13 +100,13 @@ export default function Header() {
       
           <ListItem button >
             <ListItemIcon>
-              <MailIcon />
+              <ContactMailIcon />
             </ListItemIcon>
             <ListItemText>CONTACT</ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
-              <MailIcon />
+              <AttachMoneyIcon />
             </ListItemIcon>
             <ListItemText>HIRE</ListItemText>
           </ListItem>
