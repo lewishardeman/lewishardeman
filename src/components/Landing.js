@@ -15,6 +15,7 @@ import LewisAvatar from './lewis_avatar.jpg';
 import Header from './Header/Header';
 import classNames from 'classnames';
 import AddIcon from '@material-ui/icons/Add';
+import Hidden from '@material-ui/core/Hidden';
 
 
 const useStyles = makeStyles(theme => ({
@@ -31,6 +32,12 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 700,
         color: '#fff',
         marginBottom: '2vw'
+    },
+    pagetitleXs: {
+        fontSize: '6vw',
+        fontWeight: 700,
+        color: '#fff',
+        marginBottom: '4vw'
     },
     gridItem: {
         marginBottom: '2vw'
@@ -57,6 +64,16 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 500,
         textTransform: 'uppercase'
     },
+    skillsXs:{
+        color: '#fff',
+        // fontStyle: 'italic',
+        paddingTop: '1.0rem',
+        paddingRight: '1.0rem',
+        paddingLeft: '1.0rem',
+        fontSize: '4.0vw',
+        fontWeight: 500,
+        textTransform: 'uppercase'
+    },
     statement:{
         color: '#fff',
         fontStyle: 'italic',
@@ -64,6 +81,14 @@ const useStyles = makeStyles(theme => ({
         paddingRight: '1.0rem',
         paddingLeft: '1.0rem',
         fontSize: '1.5vw',
+    },
+    statementXs:{
+        color: '#fff',
+        fontStyle: 'italic',
+        paddingTop: '1.5rem',
+        paddingRight: '1.0rem',
+        paddingLeft: '1.0rem',
+        fontSize: '4.0vw',
     },
     addIcon: {
         //backgroundColor:'#000',
@@ -79,42 +104,90 @@ function Landing() {
             
             <div className={classes.background} >
             <Header />
-            <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-                style={{height: '90vh'}} 
-            >
-                    <Grid item className={classes.pagetitle}>
-                        LEWIS HARDEMAN
+
+            {/* Show only on sm, md, lg, xl */}
+            <Hidden only="xs">
+                <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                    style={{height: '90vh'}} 
+                >
+                        <Grid item className={classes.pagetitle}>
+                            LEWIS HARDEMAN
+                        </Grid>
+                        <Grid item className={classes.gridItem}>
+                            <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} />
+                        </Grid>
+                        <Grid item className={classes.gridItem}>
+                            <div className={classNames(classes.borderTop, classes.skills)}>
+                                Project Manager  <AddIcon className={classes.addIcon}/>  JavaScript Developer  <AddIcon className={classes.addIcon}/>  Sales Director  <AddIcon className={classes.addIcon}/>  Combat Veteran
+                            </div>
+                            <div className={classNames(classes.statement)}>
+                                I transform software ideas into business solutions.
+                            </div>
+                        </Grid>
+                        <Grid item className={classes.socialIconList} >
+                            <IconButton aria-label="delete" >
+                                <FacebookIcon className={classes.iconButtonSocial} />
+                            </IconButton>
+                            <IconButton aria-label="delete"  >
+                                <LinkedInIcon className={classes.iconButtonSocial} />
+                            </IconButton>
+                            <IconButton  aria-label="add an alarm" >
+                                <GitHubIcon className={classes.iconButtonSocial} />
+                            </IconButton>
+                            <IconButton  aria-label="add to shopping cart" >
+                                <InstagramIcon className={classes.iconButtonSocial} />
+                            </IconButton>
+                        </Grid>
                     </Grid>
-                    <Grid item className={classes.gridItem}>
-                        <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} />
-                    </Grid>
-                    <Grid item className={classes.gridItem}>
-                        <div className={classNames(classes.borderTop, classes.skills)}>
-                            Project Manager  <AddIcon className={classes.addIcon}/>  JavaScript Developer  <AddIcon className={classes.addIcon}/>  Sales Director  <AddIcon className={classes.addIcon}/>  Combat Veteran
-                        </div>
-                        <div className={classNames(classes.statement)}>
-                            I transform software ideas into business solutions.
-                        </div>
-                    </Grid>
-                    <Grid item className={classes.socialIconList} >
-                        <IconButton aria-label="delete" >
-                            <FacebookIcon className={classes.iconButtonSocial} />
-                        </IconButton>
-                        <IconButton aria-label="delete"  >
-                            <LinkedInIcon className={classes.iconButtonSocial} />
-                        </IconButton>
-                        <IconButton  aria-label="add an alarm" >
-                            <GitHubIcon className={classes.iconButtonSocial} />
-                        </IconButton>
-                        <IconButton  aria-label="add to shopping cart" >
-                            <InstagramIcon className={classes.iconButtonSocial} />
-                        </IconButton>
-                    </Grid>
-                </Grid>
+                </Hidden>
+
+                {/* Show xs */}
+                <Hidden smUp>
+                    <Grid
+                        container
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                        style={{height: '100vh'}} 
+                    >
+                            <Grid item className={classes.pagetitleXs}>
+                                LEWIS HARDEMAN
+                            </Grid>
+                            <Grid item className={classes.gridItem}>
+                                <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:100, width:100}} />
+                            </Grid>
+                            <Grid item className={classes.gridItem}>
+                                <div className={classNames(classes.borderTop, classes.skillsXs)}>
+                                    Project Manager  <br />  
+                                    JavaScript Developer  <br />  
+                                    Sales Director  <br />  
+                                    Combat Veteran
+                                </div>
+                                <div className={classNames(classes.statementXs)}>
+                                    I transform software ideas into business solutions.
+                                </div>
+                            </Grid>
+                            <Grid item className={classes.socialIconList} >
+                                <IconButton aria-label="delete" >
+                                    <FacebookIcon className={classes.iconButtonSocial} />
+                                </IconButton>
+                                <IconButton aria-label="delete"  >
+                                    <LinkedInIcon className={classes.iconButtonSocial} />
+                                </IconButton>
+                                <IconButton  aria-label="add an alarm" >
+                                    <GitHubIcon className={classes.iconButtonSocial} />
+                                </IconButton>
+                                <IconButton  aria-label="add to shopping cart" >
+                                    <InstagramIcon className={classes.iconButtonSocial} />
+                                </IconButton>
+                            </Grid>
+                        </Grid>
+                    </Hidden>
+            
             </div>
         </div>
     );

@@ -18,6 +18,7 @@ import BusinessIcon from '@material-ui/icons/Business';
 import DescriptionIcon from '@material-ui/icons/Description';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import Hidden from '@material-ui/core/Hidden';
 
 import './Header.css'; 
 
@@ -77,15 +78,15 @@ export default function Header() {
           </ListItem>
           <ListItem button >
             <ListItemIcon>
-              <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText>PROJECTS</ListItemText>
-          </ListItem>
-          <ListItem button >
-            <ListItemIcon>
               <DescriptionIcon />
             </ListItemIcon>
             <ListItemText>RESUME</ListItemText>
+          </ListItem>
+          <ListItem button >
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText>PROJECTS</ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
@@ -108,7 +109,7 @@ export default function Header() {
             <ListItemIcon>
               <AttachMoneyIcon />
             </ListItemIcon>
-            <ListItemText>HIRE</ListItemText>
+            <ListItemText>HIRE ME</ListItemText>
           </ListItem>
 
       </List>
@@ -125,9 +126,11 @@ export default function Header() {
           <Typography variant="h6" className={classes.title}>
             LEWIS HARDEMAN
           </Typography>
-          <Button color="inherit">Resume</Button>
-          <Button color="inherit">Projects</Button>
-          <Button color="inherit">Contact</Button> 
+          <Hidden xsDown>
+            <Button color="inherit">Resume</Button>
+            <Button color="inherit">Projects</Button>
+            <Button color="inherit">Contact</Button>
+          </Hidden> 
         </Toolbar>
 {/*         <Toolbar className="App-header">
           <Button color="inherit">Resume</Button>
