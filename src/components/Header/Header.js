@@ -22,6 +22,8 @@ import Hidden from '@material-ui/core/Hidden';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import HeaderAvatar from './lewis_avatar.jpg';
+import {Link} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import './Header.css'; 
 
@@ -50,6 +52,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles();
+  const history = useHistory();
+
+  function handleHomeClick() {
+    history.push("/home");
+  }
 
   const theme = createMuiTheme({
     overrides: {
@@ -127,29 +134,29 @@ export default function Header() {
         </ListItem>
       </List>
       <List>
-          <ListItem button >
+          <ListItem button onClick={handleHomeClick}>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText>HOME</ListItemText>
+            <ListItemText><Link to={"/resume"}>HOME</Link></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               <DescriptionIcon />
             </ListItemIcon>
-            <ListItemText>RESUME</ListItemText>
+            <ListItemText><Link to={"/resume"}>RESUME</Link></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
-            <ListItemText>PROJECTS</ListItemText>
+            <ListItemText><Link to={"/projects"}>PROJECTS</Link></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               <BusinessIcon />
             </ListItemIcon>
-            <ListItemText>WORK HISTORY</ListItemText>
+            <ListItemText><Link to={"/workHistory"}>WORK HISTORY</Link></ListItemText>
           </ListItem>
 
       </List>
@@ -160,13 +167,13 @@ export default function Header() {
             <ListItemIcon>
               <ContactMailIcon />
             </ListItemIcon>
-            <ListItemText>CONTACT</ListItemText>
+            <ListItemText><Link to={"/contact"}>CONTACT</Link></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>
               <AttachMoneyIcon />
             </ListItemIcon>
-            <ListItemText>HIRE ME</ListItemText>
+            <ListItemText><Link to={"/hire"}>HIRE ME</Link></ListItemText>
           </ListItem>
 
       </List>
@@ -186,9 +193,9 @@ export default function Header() {
               LEWIS HARDEMAN
             </Typography>
             <Hidden xsDown>
-              <Button color="inherit">Resume</Button>
-              <Button color="inherit">Projects</Button>
-              <Button color="inherit">Contact</Button>
+              <Button color="inherit"><Link to={"/resume"}>RESUME</Link></Button>
+              <Button color="inherit"><Link to={"/projects"}>PROJECTS</Link></Button>
+              <Button color="inherit"><Link to={"/contact"}>CONTACT</Link></Button>
             </Hidden> 
           </Toolbar>
   {/*         <Toolbar className="App-header">
