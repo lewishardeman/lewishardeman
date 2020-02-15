@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: '4vw',
         fontWeight: 700,
         color: '#fff',
-        //marginBottom: '10vw',
+        marginTop: 120,
         background: '#05264cc7',
         paddingRight: 25,
         paddingLeft: 25,
@@ -42,6 +42,7 @@ const useStyles = makeStyles(theme => ({
         color: '#fff',
         marginBottom: '4vw',
         background: '#05264cc7',
+        marginTop: 120,
     },
     gridItem: {
         marginBottom: '2vw'
@@ -129,14 +130,14 @@ function Landing() {
                 <Grid
                     container
                     direction="column"
-                    justify="center"
+                    justify="flex-start"
                     alignItems="center"
                     style={{height: '100vh'}} 
                 >
                         <Grid item className={classes.pagetitle}>
                             LEWIS HARDEMAN
                         </Grid>
-                           <Grid item className={classes.gridItem}>
+                        <Grid item className={classes.gridItem}>
                                 {/* <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} /> */}
                                 <div className={classes.spacer} />
                         </Grid> 
@@ -170,13 +171,10 @@ function Landing() {
                     <Grid
                         container
                         direction="column"
-                        justify="center"
+                        justify="flex-start"
                         alignItems="center"
                         style={{height: '100vh'}} 
                     >
-                             <Grid item className={classes.gridItem}>
-                                <div className={classes.spacerXs} />
-                            </Grid>
                             <Grid item className={classes.pagetitleXs}>
                                 LEWIS HARDEMAN
                             </Grid>
@@ -194,20 +192,20 @@ function Landing() {
                                 <div className={classNames(classes.statementXs)}>
                                     I transform software ideas into business solutions.
                                 </div>
-                            </Grid>
-                            <Grid item className={classes.socialIconList} >
-                                <IconButton aria-label="delete" >
-                                    <FacebookIcon className={classes.iconButtonSocial} />
-                                </IconButton>
-                                <IconButton aria-label="delete"  >
-                                    <LinkedInIcon className={classes.iconButtonSocial} />
-                                </IconButton>
-                                <IconButton  aria-label="add an alarm" >
-                                    <GitHubIcon className={classes.iconButtonSocial} />
-                                </IconButton>
-                                <IconButton  aria-label="add to shopping cart" >
-                                    <InstagramIcon className={classes.iconButtonSocial} />
-                                </IconButton>
+                                <div className={classes.socialIconList}>
+                                    <IconButton aria-label="delete" >
+                                        <FacebookIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                    <IconButton aria-label="delete"  >
+                                        <LinkedInIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                    <IconButton  aria-label="add an alarm" >
+                                        <GitHubIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                    <IconButton  aria-label="add to shopping cart" >
+                                        <InstagramIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                </div>
                             </Grid>
                         </Grid>
                     </Hidden>
