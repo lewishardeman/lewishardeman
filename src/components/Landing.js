@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
+//import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -10,8 +10,8 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 //import MyLocationIcon from '@material-ui/icons/MyLocation';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Background from './sunset.jpg';
-import LewisAvatar from './lewis_avatar.jpg';
+import Background from './LandingBackground.jpg';
+//import LewisAvatar from './lewis_avatar.jpg';
 import Header from './Header/Header';
 import classNames from 'classnames';
 import AddIcon from '@material-ui/icons/Add';
@@ -31,13 +31,17 @@ const useStyles = makeStyles(theme => ({
         fontSize: '4vw',
         fontWeight: 700,
         color: '#fff',
-        marginBottom: '2vw'
+        //marginBottom: '10vw',
+        background: '#05264cc7',
+        paddingRight: 25,
+        paddingLeft: 25,
     },
     pagetitleXs: {
-        fontSize: '6vw',
+        fontSize: '7vw',
         fontWeight: 700,
         color: '#fff',
-        marginBottom: '4vw'
+        marginBottom: '4vw',
+        background: '#05264cc7',
     },
     gridItem: {
         marginBottom: '2vw'
@@ -48,6 +52,9 @@ const useStyles = makeStyles(theme => ({
     },
     socialIconList: {
         paddingTop: '1.0rem',
+        background: '#05264cc7',
+        paddingRight: 25,
+        paddingLeft: 25,
     },
     borderBottom:{
         borderBottomWidth: '1px',
@@ -62,7 +69,9 @@ const useStyles = makeStyles(theme => ({
         paddingLeft: '1.0rem',
         fontSize: '1.5vw',
         fontWeight: 500,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        background: '#05264cc7',
+        //marginTop: '6vw',
     },
     skillsXs:{
         color: '#fff',
@@ -72,7 +81,8 @@ const useStyles = makeStyles(theme => ({
         paddingLeft: '1.0rem',
         fontSize: '4.0vw',
         fontWeight: 500,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        background: '#05264cc7',
     },
     statement:{
         color: '#fff',
@@ -81,6 +91,7 @@ const useStyles = makeStyles(theme => ({
         paddingRight: '1.0rem',
         paddingLeft: '1.0rem',
         fontSize: '1.5vw',
+        background: '#05264cc7',
     },
     statementXs:{
         color: '#fff',
@@ -89,11 +100,19 @@ const useStyles = makeStyles(theme => ({
         paddingRight: '1.0rem',
         paddingLeft: '1.0rem',
         fontSize: '4.0vw',
+        background: '#05264cc7',
     },
     addIcon: {
         //backgroundColor:'#000',
         verticalAlign:'middle'
-    }
+    },
+    spacer: {
+        height: '30vh'
+    },
+    spacerXs: {
+        height: '10vh'
+    },
+
   }));
 
 function Landing() {
@@ -112,14 +131,15 @@ function Landing() {
                     direction="column"
                     justify="center"
                     alignItems="center"
-                    style={{height: '90vh'}} 
+                    style={{height: '100vh'}} 
                 >
                         <Grid item className={classes.pagetitle}>
                             LEWIS HARDEMAN
                         </Grid>
-                        <Grid item className={classes.gridItem}>
-                            <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} />
-                        </Grid>
+                           <Grid item className={classes.gridItem}>
+                                {/* <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} /> */}
+                                <div className={classes.spacer} />
+                        </Grid> 
                         <Grid item className={classes.gridItem}>
                             <div className={classNames(classes.borderTop, classes.skills)}>
                                 Project Manager  <AddIcon className={classes.addIcon}/>  JavaScript Developer  <AddIcon className={classes.addIcon}/>  Sales Director  <AddIcon className={classes.addIcon}/>  Combat Veteran
@@ -127,8 +147,7 @@ function Landing() {
                             <div className={classNames(classes.statement)}>
                                 I transform software ideas into business solutions.
                             </div>
-                        </Grid>
-                        <Grid item className={classes.socialIconList} >
+                            <div className={classes.socialIconList}>
                             <IconButton aria-label="delete" >
                                 <FacebookIcon className={classes.iconButtonSocial} />
                             </IconButton>
@@ -141,6 +160,7 @@ function Landing() {
                             <IconButton  aria-label="add to shopping cart" >
                                 <InstagramIcon className={classes.iconButtonSocial} />
                             </IconButton>
+                            </div>
                         </Grid>
                     </Grid>
                 </Hidden>
@@ -154,11 +174,15 @@ function Landing() {
                         alignItems="center"
                         style={{height: '100vh'}} 
                     >
+                             <Grid item className={classes.gridItem}>
+                                <div className={classes.spacerXs} />
+                            </Grid>
                             <Grid item className={classes.pagetitleXs}>
                                 LEWIS HARDEMAN
                             </Grid>
                             <Grid item className={classes.gridItem}>
-                                <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:100, width:100}} />
+                                {/* <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:100, width:100}} /> */}
+                                <div className={classes.spacerXs} />
                             </Grid>
                             <Grid item className={classes.gridItem}>
                                 <div className={classNames(classes.borderTop, classes.skillsXs)}>
