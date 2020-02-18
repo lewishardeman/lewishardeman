@@ -10,12 +10,13 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 //import MyLocationIcon from '@material-ui/icons/MyLocation';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Background from './LandingBackground.jpg';
+import Background from './homeBackground.jpg';
 //import LewisAvatar from './lewis_avatar.jpg';
 import classNames from 'classnames';
-import AddIcon from '@material-ui/icons/Add';
+//import AddIcon from '@material-ui/icons/Add';
 import Hidden from '@material-ui/core/Hidden';
 import './Home.css'; 
+import {Link} from 'react-router-dom';
 
 
 const useStyles = makeStyles(theme => ({
@@ -34,10 +35,11 @@ const useStyles = makeStyles(theme => ({
         fontSize: '4vw',
         fontWeight: 700,
         color: '#fff',
-        marginTop: 120,
+        //marginTop: 120,
         background: '#05264cc7',
         paddingRight: 25,
         paddingLeft: 25,
+        paddingBottom: '3vw',
     },
     pagetitleXs: {
         fontSize: '7vw',
@@ -48,14 +50,14 @@ const useStyles = makeStyles(theme => ({
         marginTop: 120,
     },
     gridItem: {
-        marginBottom: '2vw'
+        //marginBottom: '2vw'
     },
     iconButtonSocial: {
         color: '#fff',
         fontSize: '2rem',
     },
     socialIconList: {
-        paddingTop: '1.0rem',
+        paddingBottom: '3vw',
         background: '#05264cc7',
         paddingRight: 25,
         paddingLeft: 25,
@@ -68,7 +70,7 @@ const useStyles = makeStyles(theme => ({
     skills:{
         color: '#fff',
         // fontStyle: 'italic',
-        paddingTop: '1.0rem',
+        paddingBottom: '3vw',
         paddingRight: '1.0rem',
         paddingLeft: '1.0rem',
         fontSize: '1.5vw',
@@ -91,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     statement:{
         color: '#fff',
         fontStyle: 'italic',
-        paddingTop: '1.5rem',
+        paddingBottom: '3vw',
         paddingRight: '1.0rem',
         paddingLeft: '1.0rem',
         fontSize: '1.5vw',
@@ -133,37 +135,50 @@ function Home() {
                 <Grid
                     container
                     direction="column"
-                    justify="flex-start"
+                    justify="center"
                     alignItems="center"
-                    style={{height: '100vh'}} 
+                    style={{height: '100vh'}}
                 >
-                        <Grid item className={classes.pagetitle}>
-                            LEWIS HARDEMAN
+                        <Grid item >
+                            
                         </Grid>
+                        
                         <Grid item className={classes.gridItem}>
-                                {/* <Avatar alt="Lewis Hardeman" src={LewisAvatar} style={{height:200, width:200}} /> */}
-                                <div className={classes.spacer} />
-                        </Grid> 
-                        <Grid item className={classes.gridItem}>
+                            <div className={classes.pagetitle}>
+                                LEWIS HARDEMAN
+                            </div>
                             <div className={classNames(classes.borderTop, classes.skills)}>
-                                Project Manager  <AddIcon className={classes.addIcon}/>  JavaScript Developer  <AddIcon className={classes.addIcon}/>  Sales Director  <AddIcon className={classes.addIcon}/>  Combat Veteran
+                                <ul style={{listStyleType:'none', margin:'0'}}>
+                                    <li>Project Manager</li>
+                                    <li>JavaScript Developer</li>
+                                    <li>Sales Director</li>
+                                    <li>Combat Veteran</li>
+                                </ul>
                             </div>
                             <div className={classNames(classes.statement)}>
                                 I transform software ideas into business solutions.
                             </div>
                             <div className={classes.socialIconList}>
-                            <IconButton aria-label="delete" >
-                                <FacebookIcon className={classes.iconButtonSocial} />
-                            </IconButton>
-                            <IconButton aria-label="delete"  >
-                                <LinkedInIcon className={classes.iconButtonSocial} />
-                            </IconButton>
-                            <IconButton  aria-label="add an alarm" >
-                                <GitHubIcon className={classes.iconButtonSocial} />
-                            </IconButton>
-                            <IconButton  aria-label="add to shopping cart" >
-                                <InstagramIcon className={classes.iconButtonSocial} />
-                            </IconButton>
+                                <Link to={'/facebook'}>    
+                                    <IconButton aria-label="facebook" >
+                                        <FacebookIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                </Link>
+                                <Link to={'/linkedIn'}>    
+                                    <IconButton aria-label="linkedIn" >
+                                        <LinkedInIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                </Link>
+                                <Link to={'/github'}>    
+                                    <IconButton aria-label="github" >
+                                        <GitHubIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                </Link>
+                                    <Link to={'/floorsoft'}>    
+                                    <IconButton aria-label="floorsoft" >
+                                        <InstagramIcon className={classes.iconButtonSocial} />
+                                    </IconButton>
+                                </Link>
                             </div>
                         </Grid>
                     </Grid>
@@ -187,27 +202,37 @@ function Home() {
                             </Grid>
                             <Grid item className={classes.gridItem}>
                                 <div className={classNames(classes.borderTop, classes.skillsXs)}>
-                                    Project Manager  <br />  
-                                    JavaScript Developer  <br />  
-                                    Sales Director  <br />  
-                                    Combat Veteran
+                                    <ul style={{listStyleType:'none'}}>
+                                        <li>Project Manager</li>
+                                        <li>JavaScript Developer</li>
+                                        <li>Sales Director</li>
+                                        <li>Combat Veteran</li>
+                                    </ul>
                                 </div>
                                 <div className={classNames(classes.statementXs)}>
                                     I transform software ideas into business solutions.
                                 </div>
                                 <div className={classes.socialIconList}>
-                                    <IconButton aria-label="delete" >
-                                        <FacebookIcon className={classes.iconButtonSocial} />
-                                    </IconButton>
-                                    <IconButton aria-label="delete"  >
-                                        <LinkedInIcon className={classes.iconButtonSocial} />
-                                    </IconButton>
-                                    <IconButton  aria-label="add an alarm" >
-                                        <GitHubIcon className={classes.iconButtonSocial} />
-                                    </IconButton>
-                                    <IconButton  aria-label="add to shopping cart" >
-                                        <InstagramIcon className={classes.iconButtonSocial} />
-                                    </IconButton>
+                                    <Link to={'/facebook'}>    
+                                        <IconButton aria-label="facebook" >
+                                            <FacebookIcon className={classes.iconButtonSocial} />
+                                        </IconButton>
+                                    </Link>
+                                    <Link to={'/linkedIn'}>    
+                                        <IconButton aria-label="linkedIn" >
+                                            <LinkedInIcon className={classes.iconButtonSocial} />
+                                        </IconButton>
+                                    </Link>
+                                    <Link to={'/github'}>    
+                                        <IconButton aria-label="github" >
+                                            <GitHubIcon className={classes.iconButtonSocial} />
+                                        </IconButton>
+                                    </Link>
+                                        <Link to={'/floorsoft'}>    
+                                        <IconButton aria-label="floorsoft" >
+                                            <InstagramIcon className={classes.iconButtonSocial} />
+                                        </IconButton>
+                                    </Link>
                                 </div>
                             </Grid>
                         </Grid>

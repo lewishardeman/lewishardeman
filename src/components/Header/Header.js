@@ -23,7 +23,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import HeaderAvatar from './lewis_avatar.jpg';
 import {Link} from "react-router-dom";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 import './Header.css'; 
 
@@ -52,11 +52,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles();
-  const history = useHistory();
+  //const history = useHistory();
 
-  function handleHomeClick() {
-    history.push("/home");
-  }
+//   function handleHomeClick() {
+//    history.push("/home");
+//  } 
 
   const theme = createMuiTheme({
     overrides: {
@@ -134,11 +134,11 @@ export default function Header() {
         </ListItem>
       </List>
       <List>
-          <ListItem button onClick={handleHomeClick}>
+          <ListItem button>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText><Link to={"/resume"}>HOME</Link></ListItemText>
+            <ListItemText><Link to={"/home"}>HOME</Link></ListItemText>
           </ListItem>
           <ListItem button >
             <ListItemIcon>

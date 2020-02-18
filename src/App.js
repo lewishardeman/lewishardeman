@@ -41,6 +41,22 @@ function App() {
           <Route path="/workHistory">
             <WorkHistory />
           </Route>
+          <Route path="/facebook" component={() => { 
+              window.location.href = 'https://www.facebook.com/lewis.hardeman'; 
+              return null;
+          }}/>
+          <Route path='/linkedIn' component={() => { 
+              window.location.href = 'https://www.linkedin.com/in/lewis-hardeman-299a8631'; 
+              return null;
+          }}/>
+          <Route path='/github' component={() => { 
+              window.location.href = 'https://github.com/lewishardeman'; 
+              return null;
+          }}/>
+          <Route path='/floorsoft' component={() => { 
+              window.location.href = 'https://www.floorsoft.com'; 
+              return null;
+          }}/>
         </Switch>
       </Router>
     </div>
